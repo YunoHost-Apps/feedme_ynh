@@ -29,8 +29,10 @@ ynh_script_progression "Updating $app's configuration..."
 # Update config entries that may contain the old URL 
 if [[ $old_path != '/' ]]; then old_path_without_trailing_slash="$path"; else old_path_without_trailing_slash=""; fi
 if [[ $new_path != '/' ]]; then new_path_without_trailing_slash="$path"; else new_path_without_trailing_slash=""; fi
+
+user_agent=$(ynh_app_setting_get --key=user_agent)
 if [[ "$user_agent" == *"$old_domain$old_path"* ]]; then
-    $new_user_agent="${user_agent//${old_domain}${old_path}/${new_domain}${new_path}}"
+    new_user_agent="${user_agent//${old_domain}${old_path}/${new_domain}${new_path}}"
     ynh_app_setting_set --key=user_agent --value="$new_user_agent"
     ynh_config_add --template="config.yaml" --destination="$data_dir/config.yaml"
     chown -R $app: "$data_dir"
