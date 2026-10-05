@@ -34,9 +34,10 @@ ram.runtime = "50M"
     [install.domain]
     type = "domain"
 
-    [install.path]
-    type = "path"
-    default = "/feedme"
+    #FIXME support path install, cf. https://github.com/ardi4s/feedme/issues/1
+    #[install.path]
+    #type = "path"
+    #default = "/"
 
     [install.init_main_permission]
     type = "group"
