@@ -26,9 +26,9 @@ multi_instance = true
 ldap = false
 sso = false
 
-disk = "50M"
+disk = "150M"
 ram.build = "0M"
-ram.runtime = "50M"
+ram.runtime = "300M"
 
 [install]
     [install.domain]
@@ -37,7 +37,7 @@ ram.runtime = "50M"
     #FIXME support path install, cf. https://github.com/ardi4s/feedme/issues/1
     #[install.path]
     #type = "path"
-    #default = "/"
+    #default = "/feedme"
 
     [install.init_main_permission]
     type = "group"
