@@ -10,6 +10,7 @@ source /usr/share/yunohost/helpers
 # LOAD CONFIG SETTINGS
 #=================================================
 
+admin_token="$(ynh_app_setting_get --key=admin_token)"
 user_agent="$(ynh_app_setting_get --key=user_agent)"
 respect_robots="$(ynh_app_setting_get --key=respect_robots)"
 allow_private="$(ynh_app_setting_get --key=allow_private)"
