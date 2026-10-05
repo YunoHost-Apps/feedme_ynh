@@ -1,5 +1,5 @@
 [Unit]
-Description=Small description of the service
+Description=feedme: Turn any web page into a RSS feed
 After=network.target
 
 [Service]
@@ -7,12 +7,11 @@ Type=simple
 User=__APP__
 Group=__APP__
 WorkingDirectory=__INSTALL_DIR__/
-ExecStart=__INSTALL_DIR__/script
+Environment="FEEDME_ADMIN_TOKEN=__ADMIN_TOKEN__"
+ExecStart=__INSTALL_DIR__/feedme serve -addr ":__PORT__" -config "__DATA_DIR__/config.yaml"
 StandardOutput=append:/var/log/__APP__/__APP__.log
 StandardError=inherit
 
-### Depending on specificities of your service/app, you may need to tweak these
-### .. but this should be a good baseline
 # Sandboxing options to harden security
 # Details for these options: https://www.freedesktop.org/software/systemd/man/systemd.exec.html
 NoNewPrivileges=yes

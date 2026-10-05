@@ -1,0 +1,13 @@
+db_path: "__DB_PATH__"
+site_dir: "__SITE_DIR__"
+user_agent: "__USER_AGENT__"
+timeout: __TIMEOUT__
+max_body_bytes: __MAX_BODY_BYTES__
+global_concurrency: __GLOBAL_CONCURRENCY__
+per_host_interval: __PER_HOST_INTERVAL__
+respect_robots: __RESPECT_ROBOTS__
+allow_private: __ALLOW_PRIVATE__
+cache_ttl: __CACHE_TTL__
+max_elements: __MAX_ELEMENTS__
+render_url: "__RENDER_URL__"
+render_timeout: __RENDER_TIMEOUT__

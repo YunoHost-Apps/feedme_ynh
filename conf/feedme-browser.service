@@ -1,0 +1,14 @@
+[Unit]
+Description=headless browser instance for feedme
+After=network.target
+
+[Service]
+User=__APP__
+Group=__APP__
+Restart=on-failure
+ExecStart=/usr/bin/chromium --headless --no-sandbox --disable-gpu --disable-dev-shm-usage --remote-debugging-address=localhost --remote-debugging-port=__PORT_BROWSER__ --hide-scrollbars
+TimeoutStopSec=5
+SyslogIdentifier=__APP__-browser
+
+[Install]
+WantedBy=multi-user.target
