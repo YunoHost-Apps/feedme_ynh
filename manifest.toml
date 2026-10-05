@@ -55,7 +55,7 @@ ram.runtime = "50M"
 
     [resources.sources.main]
     amd64.url = "https://github.com/ardi4s/feedme/releases/download/v0.3.0/feedme_0.3.0_linux_amd64.tar.gz"
-    amd64.sha256 = "16253eeab989ae701bf8ff2cd4400e94c68e60c5489ac0c541abb12354d6e769"
+    amd64.sha256 = "93ce09114d771e3427a86883c7542b451b47cfaf9b82d077dcd777f78127251a"
     arm64.url = "https://github.com/ardi4s/feedme/releases/download/v0.3.0/feedme_0.3.0_linux_arm64.tar.gz"
     arm64.sha256 = "cca03400850f0f613ad64dff495ffb5c728c34a4c65009af8fa2003f8868a658"
 
