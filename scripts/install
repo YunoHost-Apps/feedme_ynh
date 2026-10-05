@@ -10,11 +10,17 @@ source /usr/share/yunohost/helpers
 # INITIALIZE AND STORE SETTINGS
 #=================================================
 
-# Initialize config variables made editable
+# Initialize custom config settings
 if [[ $path != '/' ]]; then path_without_trailing_slash="$path"; else path_without_trailing_slash=""; fi
 user_agent="feedme/0.1 (+https://$domain$path_without_trailing_slash/bot)"
 respect_robots="true"
 allow_private="false"
+
+# Store custom config settings
+ynh_app_setting_set --key=admin_token --value="$admin_token" #initialized via an install question but not stored before due to its password type
+ynh_app_setting_set --key=user_agent --value="$user_agent"
+ynh_app_setting_set --key=respect_robots --value="$respect_robots"
+ynh_app_setting_set --key=allow_private --value="$allow_private"
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
