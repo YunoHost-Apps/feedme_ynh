@@ -17,7 +17,7 @@ respect_robots="true"
 allow_private="false"
 
 # Store custom config settings
-admin_token_escaped="${original//\"/\\\"}"
+admin_token_escaped="${admin_token//\"/\\\"}"
 ynh_app_setting_set --key=admin_token --value="$admin_token_escaped" #initialized via an install question but not stored before due to its password type
 
 ynh_app_setting_set --key=user_agent --value="$user_agent"
