@@ -17,7 +17,9 @@ respect_robots="true"
 allow_private="false"
 
 # Store custom config settings
-ynh_app_setting_set --key=admin_token --value="$admin_token" #initialized via an install question but not stored before due to its password type
+admin_token_escaped="${original//\"/\\\"}"
+ynh_app_setting_set --key=admin_token --value="$admin_token_escaped" #initialized via an install question but not stored before due to its password type
+
 ynh_app_setting_set --key=user_agent --value="$user_agent"
 ynh_app_setting_set --key=respect_robots --value="$respect_robots"
 ynh_app_setting_set --key=allow_private --value="$allow_private"

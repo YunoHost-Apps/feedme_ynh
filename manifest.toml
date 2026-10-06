@@ -46,8 +46,8 @@ ram.runtime = "300M"
     [install.admin_token]
     ask.en = "Admin token"
     ask.fr = "Jeton administrateur"
-    help.en = "Will be asked to anyone willing to edit existing feeds' configuration."
-    help.fr = "Sera demandé à quiconque souhaite éditer la configuration des flux existants."
+    help.en = "Must not contain a double quote charater. Will be asked to anyone willing to edit existing feeds' configuration."
+    help.fr = "Ne doit pas contenir de guillemet. Sera demandé à quiconque souhaite éditer la configuration des flux existants."
     type = "password"
 
 [resources]
