@@ -49,6 +49,9 @@ ram.runtime = "300M"
     help.en = "Will be asked to anyone willing to edit existing feeds' configuration."
     help.fr = "Sera demandé à quiconque souhaite éditer la configuration des flux existants."
     type = "password"
+    pattern.regexp = '^["].*$'
+    pattern.error.en = "Erreur: Admin token can't include double quotes."
+    pattern.error.fr = "Erreur: Le jeton administrateur ne doit pas contenir de guillemets."
 
 [resources]
 
