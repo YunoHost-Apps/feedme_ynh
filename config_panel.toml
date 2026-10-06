@@ -1,0 +1,50 @@
+#:schema https://github.com/YunoHost/apps/raw/main/schemas/config_panel.v1.schema.json
+version = "1.0"
+
+[main]
+name.en = "Main configuration"
+name.fr = "Configuration principale"
+services = ["__APP__"]
+
+    [main.settings]
+    name.en = "General Settings"
+    name.fr = "Paramètres généraux"
+
+        [main.settings.admin_token]
+        ask.en = "Admin token"
+        ask.fr = "Jeton administrateur"
+        help.en = "Will be asked to anyone willing to edit existing feeds' configuration."
+        help.fr = "Sera demandé à quiconque souhaite éditer la configuration des flux existants."
+        type = "password"
+        bind = "user_agent:__DATA_DIR__/config.yaml"
+
+        [main.settings.user_agent]
+        ask.en = "Scraper's user agent"
+        ask.fr = "Agent utilisateur du scraper"
+        help.en = "The signature that admins of the websites feedme will be retrieving content from will see in their logs."
+        help.fr = "La signature que voient dans leurs logs les admins des sites dont feedme récupére le contenu."
+        type = "string"
+        default = "feedme/0.1 (+https://__DOMAIN____PATH_WITHOUT_TRAILING_SLASH__/bot)"
+        bind = "user_agent:__DATA_DIR__/config.yaml"
+
+        [main.settings.respect_robots]
+        ask.en = "Respecter les fichiers robots.txt"
+        ask.fr = "Respect robots.txt files"
+        help.en = "If a website indicates a wish to refuse access to robots, feedme will not retrieve content of the given website."
+        help.fr = "Si un site marque son souhait de refuser la visite aux robots, feedme ne récupérera pas le contenu du site en question."
+        type = "boolean"
+        default = 1
+        yes = "true"
+        no = "false"
+        bind = "respect_robots:__DATA_DIR__/config.yaml"
+
+        [main.settings.allow_private]
+        ask.en = "Allow requests to private IP ranges"
+        ask.fr = "Autoriser les requêtes sur les plages d'IP privées'"
+        help.en = "This only makes sense if you want to retrieve content from LAN addresses."
+        help.fr = "Ceci n'a d'intérêt que si vous souhaitez récupérer du contenu depuis des addresses du réseau local."
+        type = "boolean"
+        default = 0
+        yes = "true"
+        no = "false"
+        bind = "allow_private:__DATA_DIR__/config.yaml" 

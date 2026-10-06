@@ -1,0 +1,13 @@
+db_path: __DATA_DIR__/feedme.db
+site_dir: __DATA_DIR__/sites
+user_agent: "__USER_AGENT__"
+timeout: 20s
+max_body_bytes: 10485760 #10MiB
+global_concurrency: 8
+per_host_interval: 1s
+respect_robots: __RESPECT_ROBOTS__
+allow_private: __ALLOW_PRIVATE__
+cache_ttl: 24h
+max_elements: 100000
+render_url: http://localhost:__PORT_BROWSER__
+render_timeout: 30s
